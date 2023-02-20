@@ -6,9 +6,8 @@ const cors = require('cors')
 const app = express()
 const Person = require('./models/person')
 
-app.use((cors()))
 app.use(express.json())
-
+app.use(cors())
 app.use(express.static('build'))
 
 app.use(morgan('METHOD: :method - URL: :url - STATUS: :status - RESPONSE TIME: :response-time[3] ms - POSTED DATA: :postData'
